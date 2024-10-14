@@ -19,7 +19,6 @@ int main() {
    for (int i = 0; i < 5; i++) {
         stringstream ss(studentData[i]);
         string studentID, firstName, lastName, email, ageStr, daysInCourse1Str, daysInCourse2Str, daysInCourse3Str, degreeProgramStr;
-        //removes comma
         getline(ss, studentID, ',');
         getline(ss, firstName, ',');
         getline(ss, lastName, ',');
@@ -30,11 +29,11 @@ int main() {
         getline(ss, daysInCourse3Str, ',');
         getline(ss, degreeProgramStr, ',');
 
-        cout << "Parsing student data: " << studentData[i] << endl;
-        cout << "ageStr: " << ageStr << endl;
-        cout << "daysInCourse1Str: " << daysInCourse1Str << endl;
-        cout << "daysInCourse2Str: " << daysInCourse2Str << endl;
-        cout << "daysInCourse3Str: " << daysInCourse3Str << endl;
+        cout << "Parsing data: " << studentData[i] << endl;
+        cout << "age: " << ageStr << endl;
+        cout << "daysInCourse1: " << daysInCourse1Str << endl;
+        cout << "daysInCourse2: " << daysInCourse2Str << endl;
+        cout << "daysInCourse3: " << daysInCourse3Str << endl;
 
         try {
             //stoi() parses string to integer
