@@ -20,14 +20,21 @@ void Roster::add(std::string studentID, std::string firstName, std::string lastN
 
 //remove method
 void Roster::remove(std::string studentID) {
+    bool studentFound = false; 
     for (int i = 0; i <= lastIndex; i++) {
         if (classRosterArray[i]->getStudentID() == studentID) {
             delete classRosterArray[i];
             classRosterArray[i] = classRosterArray[lastIndex];
             classRosterArray[lastIndex] = nullptr;
             lastIndex--;
+            studentFound = true;
+            std::cout << "Student with ID " << studentID << " was removed from roster." << std::endl;
             break;
         }
+    }
+    
+    if (!studentFound) {
+        std::cout << "Student with ID " << studentID << " not found." << std::endl;
     }
 }
 
@@ -56,7 +63,7 @@ void Roster::printInvalidEmails() const {
         //student.h accessor
         std::string email = classRosterArray[i]->getEmail();
         if (email.find('@') == std::string::npos || email.find('.') == std::string::npos || email.find(' ') != std::string::npos) {
-            std::cout << "Invalid email: " << email << std::endl;
+            std::cout << email << std::endl;
         }
     }
 }

@@ -9,7 +9,6 @@ Student::Student(std::string studentID, std::string firstName, std::string lastN
     daysInCourse[2] = daysInCourse3;
 }
 
-// Accessors 
 std::string Student::getStudentID() const { return studentID; }
 std::string Student::getFirstName() const { return firstName; }
 std::string Student::getLastName() const { return lastName; }
@@ -17,8 +16,7 @@ std::string Student::getEmail() const { return email; }
 int Student::getAge() const { return age; }
 int* Student::getDaysInCourse() { return daysInCourse; }
 DegreeProgram Student::getDegreeProgram() const { return degreeProgram; }
-
-// Mutators. 
+ 
 void Student::setStudentID(std::string studentID) { this->studentID = studentID; }
 void Student::setFirstName(std::string firstName) { this->firstName = firstName; }
 void Student::setLastName(std::string lastName) { this->lastName = lastName; }

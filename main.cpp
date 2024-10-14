@@ -56,24 +56,34 @@ int main() {
         }
     }
 
-    // Print 
-    cout << "Course: C867" << endl;
+    // Print
+    cout << "\n"; 
+    cout << "Course: C867 script/appl" << endl;
     cout << "Programming Language: C++" << endl;
     cout << "WGU Student ID: 011746951" << endl;
     cout << "Name: Thinh Phan" << endl << endl;
 
+    cout << "Class Roster: " << std::endl;
     classRoster.printAll();
-    classRoster.printInvalidEmails();
 
+	cout << "\n";
+    cout << "Invalid Emails:" << std::endl;
+	classRoster.printInvalidEmails();
+	cout << std::endl;
+
+    cout << "Average days in course: " << std::endl;
     for (int i = 0; i < 5; i++) {
         if (classRoster.getStudentAt(i) != nullptr) {
             classRoster.printAverageDaysInCourse(classRoster.getStudentAt(i)->getStudentID());
         }
     }
+    cout << "\n";
+    cout << "Displaying degree programs:" << std::endl;
+    classRoster.printByDegreeProgram(SOFTWARE);
+    cout << std::endl;
 
-  //  classRoster.printByDegreeProgram(SOFTWARE);
-  //  classRoster.remove("A3");
-  //  classRoster.printAll();
+    classRoster.remove("A3");
+    classRoster.remove("A3");
 
     return 0;
 }
