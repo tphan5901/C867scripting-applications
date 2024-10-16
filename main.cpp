@@ -30,13 +30,7 @@ int main() {
         getline(ss, degreeProgramStr, ',');
 
         cout << "Parsing data: " << studentData[i] << endl;
-        cout << "age: " << ageStr << endl;
-        cout << "daysInCourse1: " << daysInCourse1Str << endl;
-        cout << "daysInCourse2: " << daysInCourse2Str << endl;
-        cout << "daysInCourse3: " << daysInCourse3Str << endl;
-
         try {
-            //stoi() parses string to integer
             int age = stoi(ageStr);
             int daysInCourse1 = stoi(daysInCourse1Str);
             int daysInCourse2 = stoi(daysInCourse2Str);
@@ -67,7 +61,7 @@ int main() {
     classRoster.printAll();
 
 	cout << "\n";
-    cout << "Invalid Emails:" << std::endl;
+    cout << "Invalid Emails: ";
 	classRoster.printInvalidEmails();
 	cout << std::endl;
 

@@ -44,7 +44,6 @@ void Roster::printAll() const {
     }
 }
 
-//classrosterarr.getdaysinCourse() but with ->
 void Roster::printAverageDaysInCourse(std::string studentID) const {
     for (int i = 0; i <= lastIndex; i++) {
         if (classRosterArray[i]->getStudentID() == studentID) {
