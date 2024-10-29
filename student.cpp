@@ -9,6 +9,7 @@ Student::Student(std::string studentID, std::string firstName, std::string lastN
     daysInCourse[2] = daysInCourse3;
 }
 
+//getters
 std::string Student::getStudentID() const { return studentID; }
 std::string Student::getFirstName() const { return firstName; }
 std::string Student::getLastName() const { return lastName; }
@@ -17,6 +18,7 @@ int Student::getAge() const { return age; }
 int* Student::getDaysInCourse() { return daysInCourse; }
 DegreeProgram Student::getDegreeProgram() const { return degreeProgram; }
  
+//setters
 void Student::setStudentID(std::string studentID) { this->studentID = studentID; }
 void Student::setFirstName(std::string firstName) { this->firstName = firstName; }
 void Student::setLastName(std::string lastName) { this->lastName = lastName; }
@@ -29,13 +31,12 @@ void Student::setDaysInCourse(int daysInCourse1, int daysInCourse2, int daysInCo
 }
 void Student::setDegreeProgram(DegreeProgram degreeProgram) { this->degreeProgram = degreeProgram; }
 
-// print statement
 void Student::print() const {
     std::cout << "Student ID: " << studentID << "\t";
     std::cout << "First Name: " << firstName << "\t";
     std::cout << "Last Name: " << lastName << "\t";
     std::cout << "Age: " << age << "\t";
-    std::cout << "daysInCourse: {" << daysInCourse[0] << ", " << daysInCourse[1] << ", " << daysInCourse[2] << "}\t";
+    std::cout << "DaysInCourse: {" << daysInCourse[0] << ", " << daysInCourse[1] << ", " << daysInCourse[2] << "}\t";
     std::cout << "Degree Program: ";
     switch (degreeProgram) {
         case SECURITY: std::cout << "SECURITY"; break;

@@ -2,10 +2,10 @@
 #include <sstream>
 #include "roster.h"
 
-// Constructor: initializes lastIndex to -1 indicating an empty roster
+// Constructor
 Roster::Roster() : lastIndex(-1) {}
 
-// Destructor. deallocate mem for student object
+// Deallocate memory for student objects
 Roster::~Roster() {
     for (int i = 0; i <= lastIndex; i++) {
         delete classRosterArray[i];
@@ -30,7 +30,9 @@ void Roster::remove(std::string studentID) {
             studentFound = true;
             std::cout << "Student with ID " << studentID << " was removed from roster." << std::endl;
             break;
-        }
+        } //else {
+         //   std::cout << "Student with ID" << studentID << "was removed from roster" << std::endl;
+      //  }
     }
     
     if (!studentFound) {
@@ -44,12 +46,12 @@ void Roster::printAll() const {
     }
 }
 
+//average days
 void Roster::printAverageDaysInCourse(std::string studentID) const {
     for (int i = 0; i <= lastIndex; i++) {
         if (classRosterArray[i]->getStudentID() == studentID) {
             int* days = classRosterArray[i]->getDaysInCourse();
-            std::cout << "Average days in course for student ID " << studentID << ": "
-                      << (days[0] + days[1] + days[2]) / 3.0 << std::endl;
+            std::cout << "Average days in course for student ID " << studentID << (days[0] + days[1] + days[2]) / 3.0 << std::endl;
             return;
         }
         
@@ -57,18 +59,17 @@ void Roster::printAverageDaysInCourse(std::string studentID) const {
     std::cout << "Error: Student with ID " << studentID << " not found." << std::endl;
 }
 
+//validate email
 void Roster::printInvalidEmails() const {
     for (int i = 0; i <= lastIndex; i++) {
-        //student.h accessor
         std::string email = classRosterArray[i]->getEmail();
         if (email.find('@') == std::string::npos || email.find('.') == std::string::npos || email.find(' ') != std::string::npos) {
-            std::cout << email << std::endl;
-        }
+            std::cout << email << " is invalid." << std::endl;
+        } 
     }
 }
 
 void Roster::printByDegreeProgram(DegreeProgram degreeProgram) const {
-// const degree
     for (int i = 0; i <= lastIndex; i++) {
         if (classRosterArray[i]->getDegreeProgram() == degreeProgram) {
             classRosterArray[i]->print();
@@ -76,7 +77,6 @@ void Roster::printByDegreeProgram(DegreeProgram degreeProgram) const {
     }
 }
 
-// Accessor for classRosterArray
 Student* Roster::getStudentAt(int index) const {
     if (index >= 0 && index <= lastIndex) {
         return classRosterArray[index];

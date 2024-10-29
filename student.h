@@ -3,6 +3,7 @@
 #include <string>
 #include "degree.h"
 
+//student class obj
 class Student {
 public:
     // Constructor
@@ -25,10 +26,9 @@ public:
     void setAge(int age);
     void setDaysInCourse(int daysInCourse1, int daysInCourse2, int daysInCourse3);
     void setDegreeProgram(DegreeProgram degreeProgram);
-
-    // Print method
     void print() const;
 
+//variable declaration
 public:
     std::string studentID;
     std::string firstName;

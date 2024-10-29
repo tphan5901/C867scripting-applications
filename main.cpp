@@ -10,10 +10,9 @@ int main() {
         "A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
         "A3,Jack,Napoli,The_lawyer99@yahoo.com,19,20,40,33,SOFTWARE",
         "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
-        "A5,Thinh,Phan,tphan5901@gmail.com,22,33,22,13,SOFTWARE",
+        "A5,Thinh,Phan,tphan5901@gmail.com,22,33,22,13,SOFTWARE"
     };
 
-//new instance of roster
     Roster classRoster;
 
    for (int i = 0; i < 5; i++) {
@@ -40,9 +39,8 @@ int main() {
             if (degreeProgramStr == "SECURITY") degreeProgram = SECURITY;
             else if (degreeProgramStr == "NETWORK") degreeProgram = NETWORK;
             else if (degreeProgramStr == "SOFTWARE") degreeProgram = SOFTWARE;
-            else throw invalid_argument("Invalid degree program");
+            else throw invalid_argument("Not a Degree program");
 
-            //add to roster
             classRoster.add(studentID, firstName, lastName, email, age, daysInCourse1, daysInCourse2, daysInCourse3, degreeProgram);
         } catch (const invalid_argument& e) {
             cerr << "Error parsing student data: " << studentData[i] << endl;
@@ -50,11 +48,10 @@ int main() {
         }
     }
 
-    // Print
     cout << "\n"; 
-    cout << "Course: C867 script/appl" << endl;
+    cout << "Course: C867 Script/Appl" << endl;
     cout << "Programming Language: C++" << endl;
-    cout << "WGU Student ID: 011746951" << endl;
+    cout << "Student ID: 011746951" << endl;
     cout << "Name: Thinh Phan" << endl << endl;
 
     cout << "Class Roster: " << std::endl;
